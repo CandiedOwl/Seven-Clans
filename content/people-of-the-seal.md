@@ -3,6 +3,8 @@ title = "People of the Seal"
 weight = 4
 +++
 
+<img class="clan-mark" src="../marks/seal-clan-mark.svg" alt="Mark of the Seal Clan" width="160" height="160">
+
 **Home:** the western coast, from the Shattered Ice Sea south toward the marshes ([The Land](@/the-land.md)).
 
 The Seal live along coasts and islands, on shingle beaches and low sea cliffs. They are shaped by harsh seas and sudden storms. Drowning is always close, so cooperation is survival, and the Seal are communal and protective. One of their strongest taboos: **anger stays on shore.** Land quarrels are never carried onto the water.

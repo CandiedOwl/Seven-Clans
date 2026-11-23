@@ -3,6 +3,8 @@ title = "People of the Boar"
 weight = 7
 +++
 
+<img class="clan-mark" src="../marks/boar-clan-mark.svg" alt="Mark of the Boar Clan" width="160" height="160">
+
 **Home:** the scrub and marsh edges of the south-west, around the Mist-Bound Marshes ([The Land](@/the-land.md)).
 
 The Boar live in dense thickets, marsh edges and broken scrub: the tangled, in-between lands where others fear to tread. They are hot-blooded, impulsive and stubborn. They prize ferocity and fearlessness, and believe the Boar spirit loves those who rush forward in spite of fear. Their rituals are loud: drums, shouting, stamping, painted faces.

@@ -44,6 +44,10 @@ FORBIDDEN = [
     r"\boskel\b", r"first binding", r"mid-boss", r"secret soul",
 ]
 
+# Images may only come from this vault folder.
+MARKS_DIR = pathlib.Path("Assets") / "Clan Marks"
+IMAGE_EMBED = re.compile(r"!\[\[([^\]|]+\.svg)(?:\\?\|(\d+))?\]\]")
+
 WIKILINK = re.compile(r"\[\[([^\]|#\\]+)(#[^\]|\\]+)?(?:\\?\|([^\]]+))?\]\]")
 
 
@@ -81,6 +85,20 @@ def convert_links(label, text, problems):
     return WIKILINK.sub(repl, text)
 
 
+def convert_images(label, text, vault, images, problems):
+    def repl(m):
+        name, width = m.group(1).strip(), m.group(2)
+        src = vault / MARKS_DIR / name
+        if not src.is_file():
+            problems.append(f"{label}: image not found in {MARKS_DIR}: {name}")
+            return m.group(0)
+        images[slug(name[:-4]) + ".svg"] = src
+        alt = name[:-4].replace(" Clan Mark", "")
+        style = f' width="{width}" height="{width}"' if width else ""
+        return f'<img class="clan-mark" src="../marks/{slug(name[:-4])}.svg" alt="Mark of the {alt} Clan"{style}>'
+    return IMAGE_EMBED.sub(repl, text)
+
+
 def main():
     vault = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_VAULT
     guide = vault / "Player Guide"
@@ -94,17 +112,21 @@ def main():
     if missing:
         sys.exit("These notes are listed in ORDER but missing from the vault: " + ", ".join(missing))
 
-    problems, pages = [], {}
+    problems, pages, images = [], {}, {}
     for weight, name in enumerate(ORDER):
         raw = (guide / f"{name}.md").read_text(encoding="utf-8")
         body = strip_frontmatter(raw).strip() + "\n"
         check_spoilers(f"{name}.md", body, problems)
+        body = convert_images(f"{name}.md", body, vault, images, problems)
         body = convert_links(f"{name}.md", body, problems)
         if weight == 0:
             front = f'+++\ntitle = "{config_title()}"\nsort_by = "weight"\n+++\n\n'
         else:
             front = f'+++\ntitle = "{name}"\nweight = {weight}\n+++\n\n'
         pages[target_path(name)] = front + body
+
+    for out_name, src in images.items():
+        check_spoilers(src.name, src.read_text(encoding="utf-8"), problems)
 
     map_html = None
     if map_src.exists():
@@ -125,6 +147,13 @@ def main():
     for path, text in pages.items():
         (content / path).write_text(text, encoding="utf-8")
 
+    marks = ROOT / "static" / "marks"
+    if marks.exists():
+        shutil.rmtree(marks)
+    marks.mkdir()
+    for out_name, src in images.items():
+        shutil.copyfile(src, marks / out_name)
+
     back = '<p class="lede"><a href="./">Back to the player\'s guide</a></p>'
     map_html = map_html.replace("</header>", f"  {back}\n  </header>", 1)
     (ROOT / "static" / "map.html").write_text(
@@ -135,7 +164,7 @@ def main():
         encoding="utf-8",
     )
 
-    print(f"Synced {len(pages)} pages and the map from {guide}")
+    print(f"Synced {len(pages)} pages, {len(images)} clan marks and the map from {guide}")
     if extra:
         print("Not published (add them to ORDER in scripts/sync.py to include): " + ", ".join(extra))
 

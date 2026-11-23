@@ -3,6 +3,8 @@ title = "People of the Reindeer"
 weight = 8
 +++
 
+<img class="clan-mark" src="../marks/reindeer-clan-mark.svg" alt="Mark of the Reindeer Clan" width="160" height="160">
+
 **Home:** the White Reach, the tundra and taiga of the north-east ([The Land](@/the-land.md)).
 
 The Reindeer range across the tundra, the taiga and the far-north forests, following the herds and the seasons. They are patient, methodical and season-wise. Their myths are full of long journeys and slow, certain change, and their sense of time is different: "wait for the third snow" is an ordinary instruction.

@@ -3,6 +3,8 @@ title = "People of the Raven"
 weight = 3
 +++
 
+<img class="clan-mark" src="../marks/raven-clan-mark.svg" alt="Mark of the Raven Clan" width="160" height="160">
+
 **Home:** the crossings along the Mistwater, the great river ([The Land](@/the-land.md)).
 
 The Raven range along forest edges, rocky outcrops and river crossings: the places where clans meet, trade and clash. They live by their wits: trading, scavenging, scouting and listening. They love riddles and wordplay. What outsiders call lying, Raven call *skillful speaking*.

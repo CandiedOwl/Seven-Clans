@@ -3,6 +3,8 @@ title = "People of the Wolf"
 weight = 2
 +++
 
+<img class="clan-mark" src="../marks/wolf-clan-mark.svg" alt="Mark of the Wolf Clan" width="160" height="160">
+
 **Home:** the heart of the Deep Wolfwood ([The Land](@/the-land.md)).
 
 The Wolf live deep in the great forest. They are quiet, pragmatic hunters, tied to the rhythms of the trees. Their hunting taboos are strict: no waste, no killing for sport, and special rituals for wolves, bears and great stags. Among the Wolf, *who brings meat* matters more than who your parents are.

@@ -3,6 +3,8 @@ title = "People of the Owl"
 weight = 5
 +++
 
+<img class="clan-mark" src="../marks/owl-clan-mark.svg" alt="Mark of the Owl Clan" width="160" height="160">
+
 **Home:** the Whispering Ravines, where the Wolfwood climbs into the Ashen Highlands ([The Land](@/the-land.md)).
 
 The Owl live near ravines, cliffs and deep groves: places that feel close to the spirit world. They are secretive and inward-looking. Other clans find them eerie but necessary. When there's a curse, an omen or a strange dream, you go to the Owl.
