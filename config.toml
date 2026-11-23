@@ -1,0 +1,11 @@
+# The GitHub Actions workflow overrides base_url with the real Pages address.
+base_url = "http://127.0.0.1:1111"
+title = "The Seven Clans"
+description = "The player's guide to a dark-ages, shamanistic world of seven animal clans, spirits and taboos."
+default_language = "en"
+compile_sass = false
+build_search_index = false
+generate_feeds = false
+
+[link_checker]
+internal_level = "error"

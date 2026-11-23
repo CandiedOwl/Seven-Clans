@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }} · {{ config.title }}{% endblock title %}
+{% block content %}
+<article class="prose">
+  <h1>{{ page.title }}</h1>
+  {% if page.slug == "the-land" %}
+  <p class="map-callout"><a href="{{ get_url(path='map.html') }}">Open the interactive map</a> to click through the regions, places and clan homes.</p>
+  {% endif %}
+  {{ page.content | safe }}
+</article>
+<nav class="pager" aria-label="Previous and next">
+  {% if page.lower %}<a class="prev" href="{{ page.lower.permalink }}">← {{ page.lower.title }}</a>{% else %}<span></span>{% endif %}
+  {% if page.higher %}<a class="next" href="{{ page.higher.permalink }}">{{ page.higher.title }} →</a>{% endif %}
+</nav>
+{% endblock content %}

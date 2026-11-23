@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Land of the Seven Clans</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@500;700&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap">
+<style>
+/* Layout: a carved, ochre-and-charcoal map of the land on the left; the selected region's account on the right; stacks on phones. */
+:root {
+  --paper: #e6eae4;      /* birch-bark grey, slightly green */
+  --sea: #b4c4ca;
+  --land: #d9ddcd;
+  --ink: #23272a;        /* charcoal */
+  --ink-soft: #56625e;
+  --ochre: #a2432a;      /* red ochre */
+  --panel: #f2f4ef;
+  --line: #c3cac2;
+  --r-ice: #cfdce1; --r-reach: #f1f3f1; --r-wood: #9db39a; --r-rav: #b6b2a6;
+  --r-high: #c8b7a3; --r-grass: #d7d3a4; --r-scrub: #b8b38b; --r-marsh: #a7baad;
+  --river: #4f7686;
+  --font-display: "Alegreya SC", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-body: "Alegreya Sans", "Gill Sans", "Trebuchet MS", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #121719; --sea: #1a2a31; --land: #252e28; --ink: #e2e5de; --ink-soft: #a3aea8;
+    --ochre: #d97a52; --panel: #1a2023; --line: #354039;
+    --r-ice: #23363e; --r-reach: #3a4549; --r-wood: #2d4432; --r-rav: #3b3a37;
+    --r-high: #4a3b33; --r-grass: #4a4930; --r-scrub: #3f3c2a; --r-marsh: #2b3d36;
+    --river: #7fb0c2;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #121719; --sea: #1a2a31; --land: #252e28; --ink: #e2e5de; --ink-soft: #a3aea8;
+  --ochre: #d97a52; --panel: #1a2023; --line: #354039;
+  --r-ice: #23363e; --r-reach: #3a4549; --r-wood: #2d4432; --r-rav: #3b3a37;
+  --r-high: #4a3b33; --r-grass: #4a4930; --r-scrub: #3f3c2a; --r-marsh: #2b3d36;
+  --river: #7fb0c2;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+.wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-block: 28px 40px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid;
+  gap: 20px;
+}
+header { display: grid; gap: 4px; }
+h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+  letter-spacing: 0.04em;
+  margin: 0;
+  text-wrap: balance;
+}
+.lede { margin: 0; color: var(--ink-soft); max-width: 62ch; }
+
+.main { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(280px, 1fr); gap: 20px; align-items: start; }
+@media (max-width: 860px) { .main { grid-template-columns: 1fr; } }
+
+.mapbox {
+  background: var(--sea);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+  line-height: 0;
+}
+svg { width: 100%; height: auto; display: block; }
+
+.region { cursor: pointer; outline: none; }
+.region .shape { stroke: var(--ink); stroke-opacity: 0.35; stroke-width: 1.2; transition: stroke 0.15s; }
+.region:hover .shape, .region:focus-visible .shape { stroke: var(--ochre); stroke-opacity: 1; stroke-width: 3; }
+.region.is-selected .shape { stroke: var(--ochre); stroke-opacity: 1; stroke-width: 4; }
+.tex { pointer-events: none; }
+
+.label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  fill: var(--ink);
+  letter-spacing: 0.12em;
+  pointer-events: none;
+  paint-order: stroke;
+  stroke: var(--land);
+  stroke-width: 5px;
+  stroke-linejoin: round;
+}
+.label.sea { stroke: var(--sea); }
+.sublabel {
+  font-family: var(--font-body);
+  font-style: italic;
+  fill: var(--ink-soft);
+  pointer-events: none;
+  paint-order: stroke;
+  stroke: var(--land);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+.sublabel.sea { stroke: var(--sea); }
+.river-line { fill: none; stroke: var(--river); stroke-width: 7; stroke-linecap: round; }
+.river-hit { fill: none; stroke: transparent; stroke-width: 28; cursor: pointer; }
+.river-g:hover .river-line, .river-g:focus-visible .river-line, .river-g.is-selected .river-line { stroke: var(--ochre); }
+.river-g { outline: none; }
+.marker { cursor: pointer; }
+.marker circle { fill: var(--ochre); stroke: var(--panel); stroke-width: 2.5; }
+.marker text {
+  font-family: var(--font-body); font-weight: 500; fill: var(--ink);
+  paint-order: stroke; stroke: var(--land); stroke-width: 4px; stroke-linejoin: round;
+}
+.marker.sea text { stroke: var(--sea); }
+.compass text { font-family: var(--font-display); font-weight: 700; fill: var(--ink); }
+.compass path { fill: var(--ochre); }
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 22px;
+  display: grid;
+  gap: 14px;
+}
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  color: var(--ochre);
+  margin: 0;
+}
+.panel h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 0.03em;
+  line-height: 1.15;
+  margin: 0;
+  text-wrap: balance;
+}
+.home { margin: 0; font-weight: 500; }
+.home span { color: var(--ink-soft); font-weight: 400; }
+.desc { margin: 0; max-width: 62ch; }
+.places { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.places li { display: grid; gap: 2px; padding-top: 10px; border-top: 1px solid var(--line); }
+.places strong { font-weight: 700; }
+.places p { margin: 0; color: var(--ink-soft); font-size: 0.95rem; }
+
+.clans { display: grid; gap: 10px; }
+.clans h2 {
+  font-family: var(--font-display); font-size: 1rem; letter-spacing: 0.14em; margin: 0; color: var(--ink-soft);
+}
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  font: inherit;
+  font-weight: 500;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+.chip:hover { border-color: var(--ochre); }
+.chip:focus-visible { outline: 2px solid var(--ochre); outline-offset: 2px; }
+.chip[aria-pressed="true"] { background: var(--ochre); border-color: var(--ochre); color: var(--panel); }
+.chip small { font-weight: 400; opacity: 0.8; }
+.note { margin: 0; color: var(--ink-soft); font-size: 0.9rem; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>The Land of the Seven Clans</h1>
+    <p class="lede">North is at the top; the Seal coast runs down the western edge. Choose a region, a place or a clan to read what the clans say of it.</p>
+    <p class="lede"><a href="./">Back to the player's guide</a></p>
+  </header>
+
+  <div class="main">
+    <div class="mapbox">
+      <svg viewBox="0 0 1000 760" role="group" aria-label="Map of the land. Regions can be selected.">
+        <defs>
+          <path id="landpath" d="M110,180 C200,160 320,190 420,165 C480,150 540,170 580,120 L600,0 L1000,0 L1000,760 L650,760 C600,730 520,735 450,720 C360,705 280,730 200,715 C150,705 120,690 100,660 C80,600 115,560 95,500 C80,440 120,400 100,340 C85,280 120,240 110,180 Z"/>
+          <clipPath id="landclip"><use href="#landpath"/></clipPath>
+
+          <pattern id="p-wood" width="26" height="24" patternUnits="userSpaceOnUse">
+            <path d="M6,18 L11,7 L16,18 M11,18 L11,22" style="fill:none;stroke:var(--ink);stroke-width:1.4;stroke-opacity:.45"/>
+            <path d="M18,9 L22,1 L26,9" style="fill:none;stroke:var(--ink);stroke-width:1.2;stroke-opacity:.35"/>
+          </pattern>
+          <pattern id="p-grass" width="22" height="18" patternUnits="userSpaceOnUse">
+            <path d="M4,14 L6,8 M8,14 L8,9 M15,6 L17,1" style="fill:none;stroke:var(--ink);stroke-width:1.1;stroke-opacity:.35"/>
+          </pattern>
+          <pattern id="p-high" width="40" height="30" patternUnits="userSpaceOnUse">
+            <path d="M4,24 L14,8 L24,24 M18,16 L26,4 L36,20" style="fill:none;stroke:var(--ink);stroke-width:1.3;stroke-opacity:.4"/>
+          </pattern>
+          <pattern id="p-rav" width="16" height="16" patternUnits="userSpaceOnUse">
+            <path d="M0,16 L16,0" style="fill:none;stroke:var(--ink);stroke-width:1;stroke-opacity:.35"/>
+          </pattern>
+          <pattern id="p-scrub" width="20" height="20" patternUnits="userSpaceOnUse">
+            <circle cx="5" cy="6" r="2.6" style="fill:none;stroke:var(--ink);stroke-width:1;stroke-opacity:.4"/>
+            <circle cx="15" cy="15" r="2" style="fill:none;stroke:var(--ink);stroke-width:1;stroke-opacity:.35"/>
+          </pattern>
+          <pattern id="p-marsh" width="30" height="20" patternUnits="userSpaceOnUse">
+            <path d="M2,16 L14,16 M18,8 L28,8 M8,16 L8,9 M11,16 L12,10 M23,8 L23,2" style="fill:none;stroke:var(--ink);stroke-width:1.1;stroke-opacity:.4"/>
+          </pattern>
+          <pattern id="p-reach" width="18" height="18" patternUnits="userSpaceOnUse">
+            <circle cx="4" cy="5" r="1" style="fill:var(--ink);fill-opacity:.3"/>
+            <circle cx="13" cy="13" r="1" style="fill:var(--ink);fill-opacity:.25"/>
+          </pattern>
+        </defs>
+
+        <!-- land base -->
+        <use href="#landpath" style="fill:var(--land)"/>
+
+        <!-- the Ice Sea (in the water) -->
+        <g class="region" data-region="ice" tabindex="0" role="button" aria-label="The Shattered Ice Sea">
+          <path class="shape" style="fill:var(--r-ice)" d="M0,0 L600,0 L580,120 C540,170 480,150 420,165 C320,190 200,160 110,180 C112,220 108,250 100,270 L0,270 Z"/>
+          <g class="tex" style="fill:var(--panel);fill-opacity:.75;stroke:var(--ink);stroke-opacity:.3;stroke-width:1">
+            <path d="M60,60 l40,-8 l18,22 l-30,14 z"/><path d="M160,40 l50,4 l-8,26 l-40,-6 z"/>
+            <path d="M300,70 l36,-10 l22,18 l-40,12 z"/><path d="M420,40 l40,6 l-10,24 l-36,-8 z"/>
+            <path d="M150,158 l26,-4 l8,14 l-26,5 z"/><path d="M500,95 l26,-6 l8,18 l-28,4 z"/>
+            <path d="M40,200 l26,-4 l6,16 l-26,4 z"/>
+          </g>
+        </g>
+
+        <g clip-path="url(#landclip)">
+          <g class="region" data-region="reach" tabindex="0" role="button" aria-label="The White Reach">
+            <path class="shape" style="fill:var(--r-reach)" d="M580,110 L590,0 L1000,0 L1000,230 C930,250 860,235 800,250 C740,262 690,240 640,215 C612,195 592,160 580,110 Z"/>
+            <path class="tex" fill="url(#p-reach)" d="M580,110 L590,0 L1000,0 L1000,230 C930,250 860,235 800,250 C740,262 690,240 640,215 C612,195 592,160 580,110 Z"/>
+          </g>
+          <g class="region" data-region="wood" tabindex="0" role="button" aria-label="The Deep Wolfwood">
+            <path class="shape" style="fill:var(--r-wood)" d="M0,150 L580,110 C592,160 612,195 640,215 C660,260 650,320 620,360 C560,410 470,425 380,420 C300,418 220,430 160,440 L0,440 Z"/>
+            <path class="tex" fill="url(#p-wood)" d="M0,150 L580,110 C592,160 612,195 640,215 C660,260 650,320 620,360 C560,410 470,425 380,420 C300,418 220,430 160,440 L0,440 Z"/>
+          </g>
+          <g class="region" data-region="ravines" tabindex="0" role="button" aria-label="The Whispering Ravines">
+            <path class="shape" style="fill:var(--r-rav)" d="M640,215 C690,240 740,262 800,250 C810,300 790,350 740,380 C700,400 650,390 620,360 C650,320 660,260 640,215 Z"/>
+            <path class="tex" fill="url(#p-rav)" d="M640,215 C690,240 740,262 800,250 C810,300 790,350 740,380 C700,400 650,390 620,360 C650,320 660,260 640,215 Z"/>
+          </g>
+          <g class="region" data-region="high" tabindex="0" role="button" aria-label="The Ashen Highlands">
+            <path class="shape" style="fill:var(--r-high)" d="M800,250 C860,235 930,250 1000,230 L1000,760 L660,760 C700,700 760,650 800,600 C770,560 760,480 740,380 C790,350 810,300 800,250 Z"/>
+            <path class="tex" fill="url(#p-high)" d="M800,250 C860,235 930,250 1000,230 L1000,760 L660,760 C700,700 760,650 800,600 C770,560 760,480 740,380 C790,350 810,300 800,250 Z"/>
+          </g>
+          <g class="region" data-region="grass" tabindex="0" role="button" aria-label="The Long Grass">
+            <path class="shape" style="fill:var(--r-grass)" d="M380,420 C470,425 560,410 620,360 C650,390 700,400 740,380 C760,480 770,560 800,600 C760,650 700,700 660,760 L460,760 L450,720 C430,650 420,560 380,520 C370,480 375,450 380,420 Z"/>
+            <path class="tex" fill="url(#p-grass)" d="M380,420 C470,425 560,410 620,360 C650,390 700,400 740,380 C760,480 770,560 800,600 C760,650 700,700 660,760 L460,760 L450,720 C430,650 420,560 380,520 C370,480 375,450 380,420 Z"/>
+          </g>
+          <g class="region" data-region="scrub" tabindex="0" role="button" aria-label="The Boar Scrub">
+            <path class="shape" style="fill:var(--r-scrub)" d="M0,440 L160,440 C220,430 300,418 380,420 C375,450 370,480 380,520 C330,540 270,545 220,560 C180,570 140,560 0,545 Z"/>
+            <path class="tex" fill="url(#p-scrub)" d="M0,440 L160,440 C220,430 300,418 380,420 C375,450 370,480 380,520 C330,540 270,545 220,560 C180,570 140,560 0,545 Z"/>
+          </g>
+          <g class="region" data-region="marsh" tabindex="0" role="button" aria-label="The Mist-Bound Marshes">
+            <path class="shape" style="fill:var(--r-marsh)" d="M0,545 C140,560 180,570 220,560 C270,545 330,540 380,520 C420,560 430,650 450,720 L460,760 L0,760 Z"/>
+            <path class="tex" fill="url(#p-marsh)" d="M0,545 C140,560 180,570 220,560 C270,545 330,540 380,520 C420,560 430,650 450,720 L460,760 L0,760 Z"/>
+          </g>
+        </g>
+        <!-- coastline -->
+        <use href="#landpath" style="fill:none;stroke:var(--ink);stroke-width:2;stroke-opacity:.55;pointer-events:none"/>
+
+        <!-- the Mistwater -->
+        <g class="river-g" data-region="river" tabindex="0" role="button" aria-label="The Mistwater, the great river">
+          <path class="river-line" d="M880,470 C840,440 800,410 760,392 C720,394 690,400 650,392 C610,398 570,410 520,414 C460,420 410,422 385,436 C370,468 370,500 384,525 C402,580 395,625 360,655 C320,690 260,700 200,700 C150,700 115,692 70,700"/>
+          <path class="river-hit" d="M880,470 C840,440 800,410 760,392 C720,394 690,400 650,392 C610,398 570,410 520,414 C460,420 410,422 385,436 C370,468 370,500 384,525 C402,580 395,625 360,655 C320,690 260,700 200,700 C150,700 115,692 70,700"/>
+        </g>
+
+        <!-- region labels -->
+        <text class="label sea" x="40" y="132" font-size="22">THE SHATTERED ICE SEA</text>
+        <text class="sublabel sea" x="40" y="154" font-size="15">Seal coast</text>
+        <text class="label" x="720" y="110" font-size="24">THE WHITE REACH</text>
+        <text class="sublabel" x="720" y="134" font-size="15">Reindeer</text>
+        <text class="label" x="150" y="230" font-size="26">THE DEEP WOLFWOOD</text>
+        <text class="sublabel" x="150" y="254" font-size="15">Wolf</text>
+        <text class="label" x="650" y="292" font-size="15">WHISPERING</text>
+        <text class="label" x="650" y="312" font-size="15">RAVINES</text>
+        <text class="sublabel" x="650" y="332" font-size="13">Owl</text>
+        <text class="label" x="830" y="300" font-size="20">ASHEN</text>
+        <text class="label" x="830" y="324" font-size="20">HIGHLANDS</text>
+        <text class="label" x="520" y="560" font-size="24">THE LONG GRASS</text>
+        <text class="sublabel" x="520" y="584" font-size="15">Auroch</text>
+        <text class="label" x="150" y="490" font-size="18">BOAR SCRUB</text>
+        <text class="sublabel" x="150" y="512" font-size="14">Boar</text>
+        <text class="label" x="70" y="596" font-size="19">MIST-BOUND MARSHES</text>
+        <text class="sublabel" x="70" y="618" font-size="14">Boar on the edges · Mudroot trails</text>
+        <text class="sublabel" x="400" y="400" font-size="15" style="fill:var(--river)">the Mistwater · Raven crossings</text>
+        <text class="sublabel sea" x="22" y="380" font-size="14" transform="rotate(-90 22 380)">Seal coast</text>
+
+        <!-- places -->
+        <g class="marker sea" data-region="ice"><circle cx="300" cy="176" r="7"/><text x="312" y="168" font-size="15">Whale-Bone Village</text><title>The Whale-Bone Village</title></g>
+        <g class="marker sea" data-region="ice"><circle cx="230" cy="92" r="7"/><text x="242" y="96" font-size="15">Ice-Hunger Rift</text><title>The Ice-Hunger Rift</title></g>
+        <g class="marker" data-region="reach"><circle cx="700" cy="205" r="6"/><text x="712" y="209" font-size="14">Frostveil Camp</text><title>The Frostveil Camp</title></g>
+        <g class="marker" data-region="wood"><circle cx="440" cy="282" r="7"/><text x="452" y="286" font-size="15">Howling Stones</text><title>The Howling Stones</title></g>
+        <g class="marker" data-region="wood"><circle cx="300" cy="340" r="7"/><text x="312" y="344" font-size="15">Root-Deep Cave</text><title>The Root-Deep Cave</title></g>
+        <g class="marker" data-region="river"><circle cx="560" cy="411" r="6"/><text x="520" y="440" font-size="14">River-Den · ferry</text><title>The River-Den camp and the Creekperchers' ferry</title></g>
+        <g class="marker" data-region="high"><circle cx="880" cy="352" r="7"/><text x="790" y="382" font-size="15">Steam-Blood Springs</text><title>The Steam-Blood Springs</title></g>
+        <g class="marker" data-region="high"><circle cx="900" cy="590" r="11" style="fill:none;stroke:var(--ochre);stroke-width:3"/><circle cx="900" cy="590" r="5"/><text x="820" y="622" font-size="15">Ember-Heart Crater</text><title>The Ember-Heart Crater</title></g>
+        <g class="marker" data-region="marsh"><circle cx="270" cy="652" r="7"/><text x="282" y="648" font-size="15">Ancestors' Crossing</text><title>The Ancestors' Crossing</title></g>
+        <g class="marker" data-region="marsh"><circle cx="160" cy="666" r="7"/><text x="100" y="690" font-size="15">Sunken Longhouse</text><title>The Sunken Longhouse</title></g>
+
+        <!-- compass -->
+        <g class="compass" transform="translate(950,700)" aria-hidden="true">
+          <path d="M0,-30 L9,0 L0,-6 L-9,0 Z"/>
+          <text x="0" y="22" font-size="18" text-anchor="middle">N</text>
+        </g>
+      </svg>
+    </div>
+
+    <aside class="panel" aria-live="polite">
+      <p class="eyebrow" id="p-kind">Region</p>
+      <h2 id="p-name"></h2>
+      <p class="home" id="p-home"></p>
+      <p class="desc" id="p-desc"></p>
+      <ul class="places" id="p-places"></ul>
+    </aside>
+  </div>
+
+  <section class="clans" aria-label="Clan homes">
+    <h2>WHERE THE CLANS LIVE</h2>
+    <div class="chips" id="chips"></div>
+    <p class="note">The Steam-Blood Springs in the Highlands are neutral ground, where the clans meet in council.</p>
+  </section>
+</div>
+
+<script>
+const REGIONS = {
+  wood: {
+    kind: "Region", name: "The Deep Wolfwood", home: "Wolf", homeNote: "in its heart",
+    desc: "An immense old forest of towering black pines, moss-covered stones and misty ravines in the middle of the land. Sunlight is dim, and at night spirits and beasts rule.",
+    places: [
+      ["The Howling Stones", "A circle of jagged standing stones on a forest hilltop. When the wind blows they howl like wolves. They are said to be the teeth of a long-dead forest spirit, and on certain nights the Great Wolf's shadow paces the circle."],
+      ["The Root-Deep Cave", "A narrow crack in the earth under a great pine whose roots hang like curtains. Inside are twisting tunnels and pools lit by ghostly fungi. Children are told never to follow the little lights."],
+      ["The River-Den", "The Wolf camp at the forest's edge on the Mistwater, where Wolf trade with Seal and Raven."]
+    ]
+  },
+  ice: {
+    kind: "Region", name: "The Shattered Ice Sea", home: "Seal", homeNote: "along the coast, which runs on down the western edge",
+    desc: "A bleak northern coast where the sea is choked with broken ice and black cliffs loom over the waves. Storm-spirits ride the gales, and whales are revered as wise elders.",
+    places: [
+      ["The Whale-Bone Village", "A Seal village built inside the ribcages of colossal whale skeletons. Charms of shell and driftwood clatter in the wind. Its people swear by the tides and believe lies cause storms."],
+      ["The Ice-Hunger Rift", "A jagged chasm in the sea ice that breathes cold mist and whispers. No one goes near it willingly."]
+    ]
+  },
+  reach: {
+    kind: "Region", name: "The White Reach", home: "Reindeer", homeNote: "following the herds",
+    desc: "Tundra and taiga to the north-east, inland of the Ice Sea: snow-plains without end, low birch and pine at the southern edge, and skies full of aurora.",
+    places: [
+      ["The Frostveil Camp", "Keeps to the southern edge of the Reach. They are usually the first Reindeer that outsiders meet, and they handle trade and diplomacy."]
+    ]
+  },
+  ravines: {
+    kind: "Region", name: "The Whispering Ravines", home: "Owl", homeNote: "in the cliffs",
+    desc: "Deep, misty ravines and cliffs where the Wolfwood climbs into the Ashen Highlands. Owls nest in the cliff-faces, and the wind in the gorges sounds like murmuring.",
+    places: [
+      ["The Bone Libraries", "Kept in caves in the cliffs: carved bones and skulls holding the Owl's stories, visions and taboos. Only initiates can read them all."]
+    ]
+  },
+  high: {
+    kind: "Region", name: "The Ashen Highlands", home: null, homeNote: "No clan claims the Highlands",
+    desc: "Broken mountains and volcanic plains to the east, with hot springs and geysers. The land steams and seethes, and fire and earth spirits mingle. The Mistwater rises here.",
+    places: [
+      ["The Steam-Blood Springs", "Hot springs that heal, and can harm. The water runs red with minerals. This is neutral ground, where the clans hold their councils and rites of purification."],
+      ["The Ember-Heart Crater", "A vast crater where a star fell long ago. The soil is black, laced with glowing red seams, and scattered with shards of star-iron. Strange beasts are reported near it."]
+    ]
+  },
+  grass: {
+    kind: "Region", name: "The Long Grass", home: "Auroch", homeNote: "who mark it with boundary stones",
+    desc: "Rolling grasslands and river valleys south of the Wolfwood, running down to the southern coast and rising eastward into the Highland foothills. Great herds of wild cattle move across it, and every season the Auroch walk its edges.",
+    places: []
+  },
+  scrub: {
+    kind: "Borderland", name: "The Boar Scrub", home: "Boar", homeNote: "in the tangle",
+    desc: "Dense thickets, marsh edges and broken scrub between the Wolfwood, the Long Grass and the marshes: the in-between lands where others fear to tread.",
+    places: []
+  },
+  marsh: {
+    kind: "Region", name: "The Mist-Bound Marshes", home: "Boar", homeNote: "on the edges, where the Mudroot know the trails",
+    desc: "A sprawling marsh in the south-west, where the Mistwater meets the sea. Reeds whisper, lights dance over still pools, and the line between the living and the dead is thin.",
+    places: [
+      ["The Ancestors' Crossing", "A gnarled tree whose roots form a bridge over black, still water. On certain nights the ancestors walk here. People leave offerings to ask the dead for guidance or forgiveness."],
+      ["The Sunken Longhouse", "An old clan hall, half-sunk in the marsh and leaning at a strange angle. It is said to stand half in this world and half in the spirit world. No one remembers whose hall it was."]
+    ]
+  },
+  river: {
+    kind: "River", name: "The Mistwater", home: "Raven", homeNote: "who hold its crossings",
+    desc: "The great river, and the thread through the heart of the land. It rises in the Ashen Highlands, runs below the Whispering Ravines and along the southern edge of the Deep Wolfwood, divides the Long Grass from the Boar scrub, and empties through the Mist-Bound Marshes into the sea. Only the far north, the Ice Sea coast and the White Reach, is off its path. Clans meet, trade and clash along its banks.",
+    places: [
+      ["The River-Den", "The Wolf camp at the forest's edge, trading with Seal and Raven."],
+      ["The Creekperchers' ferry", "Run by a Raven family on the stony banks near the River-Den. Nobody is ever quite sure the tolls are fair."]
+    ]
+  }
+};
+const CLANS = [["Wolf","wood"],["Raven","river"],["Seal","ice"],["Owl","ravines"],["Auroch","grass"],["Boar","scrub"],["Reindeer","reach"]];
+
+const $ = (id) => document.getElementById(id);
+const chipsEl = $("chips");
+CLANS.forEach(([clan, region]) => {
+  const b = document.createElement("button");
+  b.className = "chip"; b.type = "button"; b.id = "chip-" + clan.toLowerCase();
+  b.dataset.region = region; b.dataset.clan = clan;
+  b.innerHTML = clan + " <small>· " + REGIONS[region].name.replace(/^The /, "") + "</small>";
+  b.setAttribute("aria-pressed", "false");
+  b.addEventListener("click", () => select(region, clan));
+  chipsEl.appendChild(b);
+});
+
+function select(key, clan) {
+  const r = REGIONS[key]; if (!r) return;
+  $("p-kind").textContent = r.kind;
+  $("p-name").textContent = r.name;
+  const home = $("p-home");
+  home.textContent = "";
+  if (r.home) { home.append("Home of the " + r.home); const s = document.createElement("span"); s.textContent = ", " + r.homeNote; home.append(s); }
+  else { home.textContent = r.homeNote + "."; }
+  $("p-desc").textContent = r.desc;
+  const ul = $("p-places"); ul.textContent = "";
+  r.places.forEach(([n, d]) => {
+    const li = document.createElement("li");
+    const s = document.createElement("strong"); s.textContent = n;
+    const p = document.createElement("p"); p.textContent = d;
+    li.append(s, p); ul.append(li);
+  });
+  document.querySelectorAll("[data-region].region, .river-g").forEach(g => {
+    const on = g.dataset.region === key;
+    g.classList.toggle("is-selected", on);
+    g.setAttribute("aria-pressed", on ? "true" : "false");
+  });
+  document.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", String(clan ? c.dataset.clan === clan : c.dataset.region === key)));
+}
+
+document.querySelectorAll(".region, .river-g, .marker").forEach(el => {
+  el.addEventListener("click", () => select(el.dataset.region));
+  el.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(el.dataset.region); } });
+});
+select("wood");
+</script>
+
+</body>
+</html>
