@@ -54,6 +54,41 @@ Every power in this world comes from a **relationship**: with spirits, ancestors
 
 Smiths who can work star-iron, the **Iron-Singers**, are too rare to play. Their work is something you may earn in the world.
 
+## Spells
+
+Characters only reach 6th level, so only spells of 1st to 3rd level matter. The banned spells below are the flashiest of those: raw magic, metal, and anything that makes the wild safe. Everything else is allowed, but describe it as a spirit's help, a bargain or a ritual, not a formula.
+
+### Banned spells
+
+| Spell | Level | Why it's banned |
+| --- | --- | --- |
+| *Chaos Bolt*, *Chromatic Orb*, *Magic Missile* | 1st | Raw magical force. Power here always comes from a spirit, never from nowhere. |
+| *Silvery Barbs*, *Tenser's Floating Disk* | 1st | Spell-formula tricks with no spirit behind them. |
+| *Scorching Ray*, *Melf's Acid Arrow*, *Aganazzar's Scorcher*, *Dragon's Breath* | 2nd | Arcane blasts. There are no dragons. |
+| *Cloud of Daggers*, *Shadow Blade* | 2nd | Metal blades and swords don't exist. |
+| *Continual Flame* | 2nd | Fire must be fed and tended. Endless light would undo [the fear of the dark](@/customs-and-beliefs.md#fire-and-the-edge-of-the-dark). |
+| *Rope Trick* | 2nd | There are no hidden pockets between worlds to hide in. |
+| *Arcane Lock*, *Magic Mouth*, *Nystul's Magic Aura* | 2nd | Wizards' tricks with no spirit behind them. |
+| *Fireball*, *Lightning Bolt*, *Melf's Minute Meteors* | 3rd | The flashiest blasts. Falling stars are sacred, not ammunition. |
+| *Leomund's Tiny Hut* | 3rd | A magic shelter would take the danger out of the night. |
+| *Fly* | 3rd | Only spirits, and Skin-Changers in animal form, take to the sky. |
+| *Tiny Servant* | 3rd | No crafted servants. |
+| *Animate Dead* | 3rd | Raising the dead breaks the deepest taboo. It is a [spirit-twister](@/customs-and-beliefs.md#spirit-twisters)'s crime. |
+
+### Allowed, with a reskin
+
+- *Mage Armor:* a spirit-hide settles over you.
+- *Shield:* your Guardian turns the blow aside.
+- *Misty Step:* a step through the River-of-Mists.
+- *Find Familiar:* a small spirit in animal shape.
+- *Unseen Servant:* a minor hearth-spirit doing your bidding.
+- *Glyph of Warding:* a spirit-mark carved into wood, bone or stone.
+- *Spiritual Weapon:* an ancestor's spear, fighting beside you.
+- *Counterspell* and *Dispel Magic:* breaking a spirit's bargain, or talking it out of its work.
+- *Call Lightning:* the sky spirits' anger, called down.
+
+A great spirit may, rarely, grant a banned spell as a gift. That is the GM's call, and it always comes at a price.
+
 ## Gear and metal
 
 - **Materials:** flint, obsidian, bone, antler, wood, hide and sinew. There is **no steel or bronze**.
