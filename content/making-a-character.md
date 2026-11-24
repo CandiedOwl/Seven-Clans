@@ -41,6 +41,44 @@ You may also choose to be **clanless**. You have no Guardian, no bonus skill and
 - **Once per long rest,** if you have kept your taboos, you can call on your Guardian for **advantage on one roll** that fits your clan's creature.
 - **If you break a taboo,** you lose Guardian's Favor until you atone with a ritual, an offering or a quest. Each broken taboo also makes you easier for dark spirits to reach.
 
+## Languages
+
+Every character knows **Fire-Speech**, their **clan's tongue**, and **one more** language from the table below. Under the 2024 rules this is the usual "Common plus two". Under the 2014 rules it replaces the languages a species or background would give.
+
+- **Clanless** characters know Fire-Speech and **any two** other languages. They've drifted between camps.
+- **The First Tongue** needs the GM's agreement, and is mostly for Spirit-Talkers, Skin-Changers and Wise-Ones.
+
+### Spoken languages
+
+| Language | Spoken by | What it's like |
+| --- | --- | --- |
+| **Fire-Speech** | Everyone | The shared tongue of gatherings, trade and councils, spoken around the common fire. Plain and practical, with few words for anything sacred. *(Replaces Common.)* |
+| **Wolf-tongue** | [Wolf](@/people-of-the-wolf.md) | Low and clipped, with much left unsaid. Hunters drop half their words and finish sentences with a look. Close kin to Boar-tongue. |
+| **Boar-tongue** | [Boar](@/people-of-the-boar.md) | Loud, blunt and boastful, full of oaths. Wolf and Boar can follow each other's speech, and both hate admitting it. |
+| **Raven-tongue** | [Raven](@/people-of-the-raven.md) | A river-traders' tongue full of borrowed words, puns and double meanings. A Raven speaker can say two things at once, and often does. |
+| **Seal-tongue** | [Seal](@/people-of-the-seal.md) | Rhythmic and songlike, shaped by rowing chants and net-songs. Many words for water, ice and weather. Close kin to Reindeer-tongue. |
+| **Reindeer-tongue** | [Reindeer](@/people-of-the-reindeer.md) | Slow and patient, with words for every kind of snow, track and sky. Seal and Reindeer speakers understand each other well, one reason the two clans are allies. |
+| **Owl-tongue** | Owl | Soft and old-fashioned, spoken in murmurs. It keeps many words from the First Tongue, and it changes least of all the clan tongues. |
+| **Auroch-tongue** | [Auroch](@/people-of-the-auroch.md) | Formal and proud, with titles, honors and ritual boasts. It is related to no other clan's tongue, and the Auroch like it that way. |
+
+**Kin tongues:** someone who speaks Wolf-tongue can follow simple Boar-tongue, and the other way round. The same goes for Seal-tongue and Reindeer-tongue. Anything subtle, fast or full of slang needs an Intelligence check.
+
+### Special languages
+
+| Language | Who knows it | What it is |
+| --- | --- | --- |
+| **The First Tongue** | Spirits; fragments known by spirit-workers | The speech from the time when humans, animals and spirits could speak freely ([Spirits of the World](@/spirits-of-the-world.md)). Great spirits, Guardians and place-spirits speak it. No living person speaks it fluently, and every rite uses scraps of it. *(Replaces Primordial, Sylvan, Celestial, Infernal and Abyssal.)* |
+| **Hunt-Hands** | Hunters of every clan | A silent hand-language for the hunt: game, numbers, directions, danger. Hunters from rival clans can understand each other with it. It has no words for anything that isn't hunting or fighting. |
+| **Trail-signs** | Trail-Ghosts | Marks scratched on bark and stone that only initiates can read. *(Replaces Thieves' Cant.)* |
+| **Skin-Speech** | Skin-Changers only | The Skin-Changers' secret tongue: calls, clicks and gestures learned from animals and spirits. Teaching it to an outsider is taboo. *(Replaces Druidic.)* |
+| **Knot-Cord** | [Owl](@/people-of-the-owl.md) record-keepers, Bone-Readers | The only real writing in the world: knots tied in cords and marks carved on bone, kept in the Bone Libraries. Most people can't read at all. |
+
+### What doesn't exist
+
+Elvish, Dwarvish, Halfling, Gnomish, Draconic, Giant, Goblin, Orc, Undercommon and Deep Speech don't exist here. A Stone-Blessed or Unbowed character takes their clan's tongue instead of Giant or Orc. Monsters that would speak one of these speak the First Tongue if they are spirits, and nothing at all if they are beasts.
+
+Writing isn't common. Beyond Knot-Cord, people use [clan marks](@/customs-and-beliefs.md#the-clan-mark), pack marks and trail-signs, which are signs, not language.
+
 ## Classes
 
 Characters start at **3rd level**, and this campaign runs to **6th level**.
