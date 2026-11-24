@@ -3,6 +3,23 @@ title = "Making a Character"
 weight = 12
 +++
 
+## Your people
+
+Everyone in the clans is **human**. Other 5e species don't exist as peoples here, but two of them can be played as unusual humans, using their rules with a human look.
+
+| Play as | Rules from | What it is in the world |
+| --- | --- | --- |
+| **Human** | Human (2014: standard or variant with a feat; 2024: Human) | The default. Every clan is human. |
+| **Stone-Blessed** | Goliath | Unusually tall, heavy humans, said to carry some of the Stone-Mother's weight. Most are born to the Auroch or in the highlands, but any clan can have one. Respected and a little feared. *2024 rules:* choose Stone's Endurance, Hill's Tumble or Frost's Chill as your giant ancestry; the others are too flashy. |
+| **Unbowed** | Orc (2024) or Half-Orc (2014) | Humans born with a fury that won't let them fall: Relentless Endurance. Most common among the Boar. They look human; their darkvision is simply sharp night-eyes. |
+
+**Not playable:**
+- **Elves, dwarves, halflings, gnomes, dragonborn, tieflings and aasimar:** these peoples don't exist.
+- **Animal-folk** (such as tabaxi, kenku, tortles or lizardfolk): the clans honor their animals; they are not animals. A creature that is half beast is a spirit.
+- **Half-spirits:** they exist, but are too rare and strange to play.
+
+If you want a strange birth, play a human and take **Spirit-Touched** (Sorcerer; see [the spirit-touched](@/customs-and-beliefs.md#the-spirit-touched)), or choose to be **clanless** ([below](@/making-a-character.md#your-clan)).
+
 ## Your clan
 
 Choose one of the seven clans ([The Clans](@/the-clans.md)). Your clan gives you:
