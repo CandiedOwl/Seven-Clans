@@ -20,3 +20,4 @@ The world is old, cold and full of spirits. People live in clans, each bound to 
 4. [Spirits of the World](@/spirits-of-the-world.md): the great spirits, the Clan Guardians and the three souls
 5. [The Land](@/the-land.md): the regions and places people speak of
 6. [Making a Character](@/making-a-character.md): classes, your clan's gifts, and questions to answer
+7. [Custom Subclasses](@/custom-subclasses.md): three subclasses made for this world

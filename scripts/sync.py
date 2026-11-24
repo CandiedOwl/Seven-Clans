@@ -35,6 +35,7 @@ ORDER = [
     "Spirits of the World",
     "The Land",
     "Making a Character",
+    "Custom Subclasses",
 ]
 
 # Words that must never appear on the public site. Matching is case-insensitive.

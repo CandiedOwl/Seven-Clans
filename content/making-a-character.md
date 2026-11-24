@@ -26,13 +26,22 @@ You may also choose to be **clanless**. You have no Guardian, no bonus skill and
 
 ## Classes
 
+Characters start at **3rd level**, and this campaign runs to **6th level**.
+
 Every power in this world comes from a **relationship**: with spirits, ancestors, a Guardian, a taboo, or your own body and breath. Magic is never a formula, and no gods grant spells.
 
 - **Hunter** (Ranger or Fighter): tracking, survival, and the bow or spear. Little or no open spellcasting, but ritual techniques such as reading terrain and speaking to animals.
+  *Ranger subclasses:* Hunter → Prey-Hunter · Beast Master → Beast-Bonded · Gloom Stalker → Dusk-Stalker · Fey Wanderer → Mist-Wanderer (the River-of-Mists) · Swarmkeeper → Swarm-Kin
 - **Skin-Changer** (Druid): animal forms, herbs, and weather and land magic, always framed as bargaining with spirits.
+  *Subclasses:* Moon → Many-Skinned · Land → Rooted (bound to one region's spirits) · Shepherd → Spirit-Herder · Dreams → Dream-Walker (Owl's dream-travel) · Spores → Rot-Walker (risky; decay is close to twisting) · **new:** [Circle of the Clan-Skin](@/custom-subclasses.md#circle-of-the-clan-skin-skin-changer)
 - **Spirit-Talker** (Cleric or Warlock): speaks with ancestors, totems or one great spirit. Visions, protective charms, curses. A Warlock-style Spirit-Talker holds a pact with one particular spirit, and pacts are how spirit-twisters begin, so take care.
+  *Cleric subclasses:* Life → Mender · Grave → Ancestor-Speaker · Nature → Green-Speaker · Tempest → Storm-Speaker (the Whale Ancestor's storms) · Trickery → Mist-Speaker (Raven crossings) · **new:** [Soul-Tender](@/custom-subclasses.md#soul-tender-spirit-talker)
+  *Warlock subclasses:* Archfey → Wild-Bound (a forest or trickster spirit) · Fathomless → Sea-Bound · Undead → Grave-Bound (a dead ancestor) · Great Old One → Deep-Bound (dangerous: something old and unnamed) · Hexblade → Edge-Bound (a spirit living in an obsidian blade)
 - **Wise-One** (Bard): keeper of lore, stories and songs that bind spirits, or soothe or inflame them. Magic as story-power and ritual chant, not flashy spells.
+  *Subclasses:* Lore → Lore-Keeper · Spirits → Spirit-Teller · Valor → War-Chanter · Eloquence → Council-Voice · Whispers → Whisper-Tongue (secrets; risky)
 - **Blooded Warrior** (Fighter or Barbarian): trance, battle-fury and ancestral blessings, without formal spells.
+  *Fighter subclasses:* Champion → First Spear · Battle Master → Hunt-Master · Banneret → War-Leader (a clan war-chief) · Samurai → Unyielding (Boar's "face it or fall")
+  *Barbarian subclasses:* Totem Warrior / Wild Heart → Totem-Blooded · Ancestral Guardian → Ancestor-Shielded · Berserker → Blood-Fury · Beast → Fang-Born · **new:** [Taboo-Bearer](@/custom-subclasses.md#taboo-bearer-blooded-warrior)
 - **Trail-Ghost** (Rogue): scouts, trappers, spies and thieves, living by skill and silence. Instead of Thieves' Cant you know **trail-signs**, marks scratched on bark and stone that only initiates can read.
   *Subclasses:* Thief → Scavenger · Scout → Trail-Ghost · Assassin → Quiet Knife · Arcane Trickster → Trickster-Bound (bargains with small trickster spirits)
 - **Spirit-Touched** (Sorcerer): power you were born with, from an omen at your birth or a survival that should have killed you. Revered and feared ([the spirit-touched](@/customs-and-beliefs.md#the-spirit-touched)).
