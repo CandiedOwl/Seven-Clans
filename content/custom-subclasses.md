@@ -1,6 +1,6 @@
 +++
 title = "Custom Subclasses"
-weight = 13
+weight = 14
 +++
 
 Three subclasses made for this world, one for each of its oldest ideas: taboos, the three souls, and the clan-creature. They are built for levels 3 to 6, the range this campaign plays in. Talk to your GM before taking one; they are new and may be adjusted after play.

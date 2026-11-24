@@ -1,6 +1,6 @@
 +++
 title = "People of the Reindeer"
-weight = 8
+weight = 9
 +++
 
 <img class="clan-mark" src="../marks/reindeer-clan-mark.svg" alt="Mark of the Reindeer Clan" width="160" height="160">

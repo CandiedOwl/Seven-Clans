@@ -1,6 +1,6 @@
 +++
 title = "Making a Character"
-weight = 12
+weight = 13
 +++
 
 ## Your people

@@ -23,6 +23,7 @@ DEFAULT_VAULT = ROOT.parent / "Ancient-Darkness" / "Ancient Darkness"
 # Page order on the site. The first one becomes the home page.
 ORDER = [
     "Player Guide",
+    "How the World Works",
     "The Clans",
     "People of the Wolf",
     "People of the Raven",

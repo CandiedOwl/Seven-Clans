@@ -1,6 +1,6 @@
 +++
 title = "People of the Owl"
-weight = 5
+weight = 6
 +++
 
 <img class="clan-mark" src="../marks/owl-clan-mark.svg" alt="Mark of the Owl Clan" width="160" height="160">

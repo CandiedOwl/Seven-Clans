@@ -1,6 +1,6 @@
 +++
 title = "The Clans"
-weight = 1
+weight = 2
 +++
 
 There are **seven clans**, one for each clan-creature: Wolf, Raven, Seal, Owl, Auroch, Boar and Reindeer. A clan is a family and a spiritual bond at once. Each is watched over by the Guardian of its creature ([Clan Guardians](@/spirits-of-the-world.md#clan-guardians)).

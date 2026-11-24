@@ -1,6 +1,6 @@
 +++
 title = "People of the Raven"
-weight = 3
+weight = 4
 +++
 
 <img class="clan-mark" src="../marks/raven-clan-mark.svg" alt="Mark of the Raven Clan" width="160" height="160">

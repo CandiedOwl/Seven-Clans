@@ -1,6 +1,6 @@
 +++
 title = "People of the Seal"
-weight = 4
+weight = 5
 +++
 
 <img class="clan-mark" src="../marks/seal-clan-mark.svg" alt="Mark of the Seal Clan" width="160" height="160">

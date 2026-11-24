@@ -1,6 +1,6 @@
 +++
 title = "Spirits of the World"
-weight = 10
+weight = 11
 +++
 
 The clans see the unseen in layers:

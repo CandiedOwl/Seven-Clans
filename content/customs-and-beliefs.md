@@ -1,6 +1,6 @@
 +++
 title = "Customs and Beliefs"
-weight = 9
+weight = 10
 +++
 
 Every clan holds these things true, even when they express them differently.

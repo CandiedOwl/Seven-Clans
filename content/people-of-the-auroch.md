@@ -1,6 +1,6 @@
 +++
 title = "People of the Auroch"
-weight = 6
+weight = 7
 +++
 
 <img class="clan-mark" src="../marks/auroch-clan-mark.svg" alt="Mark of the Auroch Clan" width="160" height="160">

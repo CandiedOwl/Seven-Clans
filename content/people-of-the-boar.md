@@ -1,6 +1,6 @@
 +++
 title = "People of the Boar"
-weight = 7
+weight = 8
 +++
 
 <img class="clan-mark" src="../marks/boar-clan-mark.svg" alt="Mark of the Boar Clan" width="160" height="160">
