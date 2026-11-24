@@ -5,6 +5,8 @@ weight = 3
 
 <img class="clan-mark" src="../marks/raven-clan-mark.svg" alt="Mark of the Raven Clan" width="160" height="160">
 
+**[Clan mark](@/customs-and-beliefs.md#the-clan-mark).** **The broken ring:** a circle drawn in four arcs that never quite meet, with a single dot just outside one gap: the thing the raven found. It's painted at fords and ferry posts, and tattooed at the wrist or the corner of the eye. Ravens say a closed circle is a trap.
+
 **Home:** the crossings along the Mistwater, the great river ([The Land](@/the-land.md)).
 
 The Raven range along forest edges, rocky outcrops and river crossings: the places where clans meet, trade and clash. They live by their wits: trading, scavenging, scouting and listening. They love riddles and wordplay. What outsiders call lying, Raven call *skillful speaking*.

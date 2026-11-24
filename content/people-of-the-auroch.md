@@ -5,6 +5,8 @@ weight = 6
 
 <img class="clan-mark" src="../marks/auroch-clan-mark.svg" alt="Mark of the Auroch Clan" width="160" height="160">
 
+**[Clan mark](@/customs-and-beliefs.md#the-clan-mark).** **The studded ring:** a circle with square studs standing out from its lower half like a fence of stakes, often drawn with two sweeping horn-curves above. It's branded or painted on hide shields and tents, and tattooed across the shoulders or chest at the Horn Mark.
+
 **Home:** the Long Grass, south of the Wolfwood ([The Land](@/the-land.md)).
 
 The Auroch live on open grasslands and in wide river valleys, following wild cattle and the great herds. They are bold, proud and honor-bound. Courage in the hunt and in battle is their highest virtue. They respect strength of body and of spirit, though they often mistake subtlety for weakness. Feasts, wrestling and contests are part of every gathering.

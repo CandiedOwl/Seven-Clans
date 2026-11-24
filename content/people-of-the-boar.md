@@ -5,6 +5,8 @@ weight = 7
 
 <img class="clan-mark" src="../marks/boar-clan-mark.svg" alt="Mark of the Boar Clan" width="160" height="160">
 
+**[Clan mark](@/customs-and-beliefs.md#the-clan-mark).** **The slashes:** a ring cut through by two sets of three claw-strokes. It's scarred or tattooed on the arms and cheeks, and the Tuskrune adds a mark for every fight survived, so an old warrior's arms are covered in them.
+
 **Home:** the scrub and marsh edges of the south-west, around the Mist-Bound Marshes ([The Land](@/the-land.md)).
 
 The Boar live in dense thickets, marsh edges and broken scrub: the tangled, in-between lands where others fear to tread. They are hot-blooded, impulsive and stubborn. They prize ferocity and fearlessness, and believe the Boar spirit loves those who rush forward in spite of fear. Their rituals are loud: drums, shouting, stamping, painted faces.

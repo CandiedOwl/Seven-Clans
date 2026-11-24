@@ -5,6 +5,8 @@ weight = 5
 
 <img class="clan-mark" src="../marks/owl-clan-mark.svg" alt="Mark of the Owl Clan" width="160" height="160">
 
+**[Clan mark](@/customs-and-beliefs.md#the-clan-mark).** **Fourteen dots:** a ring of points, one for each night from new moon to full. It's tattooed around the eye or across the brow, and painted on Night Masks and the bones of the Bone Libraries. A dot filled in or circled marks a night worth remembering.
+
 **Home:** the Whispering Ravines, where the Wolfwood climbs into the Ashen Highlands ([The Land](@/the-land.md)).
 
 The Owl live near ravines, cliffs and deep groves: places that feel close to the spirit world. They are secretive and inward-looking. Other clans find them eerie but necessary. When there's a curse, an omen or a strange dream, you go to the Owl.

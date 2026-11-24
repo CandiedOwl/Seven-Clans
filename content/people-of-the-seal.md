@@ -5,6 +5,8 @@ weight = 4
 
 <img class="clan-mark" src="../marks/seal-clan-mark.svg" alt="Mark of the Seal Clan" width="160" height="160">
 
+**[Clan mark](@/customs-and-beliefs.md#the-clan-mark).** **The waves:** a double ring whose inner line ripples like a floe edge, with three wave-lines beneath. It's carved on oars, prows and harpoon shafts, and tattooed in bands on the forearm or chin. The oar a youth earns in the Oar's Burden carries it.
+
 **Home:** the western coast, from the Shattered Ice Sea south toward the marshes ([The Land](@/the-land.md)).
 
 The Seal live along coasts and islands, on shingle beaches and low sea cliffs. They are shaped by harsh seas and sudden storms. Drowning is always close, so cooperation is survival, and the Seal are communal and protective. One of their strongest taboos: **anger stays on shore.** Land quarrels are never carried onto the water.
