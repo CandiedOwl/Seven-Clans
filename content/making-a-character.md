@@ -144,6 +144,20 @@ Characters only reach 6th level, so only spells of 1st to 3rd level matter. The 
 
 A great spirit may, rarely, grant a banned spell as a gift. That is the GM's call, and it always comes at a price.
 
+## Gifts of the clans
+
+Every clan knows things the others don't, and a clan that trusts you may share them. A gift is never bought: it's earned by helping a clan, keeping faith as its guest, or passing a guest-rite. A clan rarely gives one person more than one gift, unless they've done something great for it.
+
+A gift may be the clan's **craft worked into your gear**, a **guest-mark** set beside your own clan mark, or a piece of **sacred knowledge**. Travelers tell of:
+
+- **Owl:** boots that step without a sound, eyes that see a little in the dark, and dreams that answer questions.
+- **Wolf:** hoods that make a trail easier to follow, hunters who can't be caught off guard, and the Silent Walk that reads omens in the forest.
+- **Raven:** pockets no one can find, a second name to hide behind, and free passage at every crossing.
+- **Seal:** sea-hide that turns away the cold, marks that make you swim like a seal, and songs that heal a tired crew.
+- **Auroch:** shields that can't be pushed back, a grip no one can break, and the stance that steadies a war band.
+- **Boar:** weapons that hit hardest at the end of a charge, scars that drive out fear, and the secret trails of the marsh.
+- **Reindeer:** beadwork that carries you over snow, marks that keep you walking long after others fall, and Sky Counting, which reads tomorrow's weather.
+
 ## Gear and metal
 
 - **Materials:** flint, obsidian, bone, antler, wood, hide and sinew. There is **no steel or bronze**.

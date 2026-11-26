@@ -38,6 +38,7 @@ Every person carries a mark linking them to their clan, and their clan to its sp
 - The mark is proof of **belonging**. Being without it is like being naked in the eyes of the world.
 - Clans mark shared things, such as totems and standing stones, so the spirits can see which clan keeps which pact.
 - Many add personal marks beside the clan mark for their deeds: a first hunt, a rite passed, a bargain with a spirit.
+- Another clan may give you a **guest-mark** for a deed done for them: a small sign beside your own mark, never their clan mark ([gifts of the clans](@/making-a-character.md#gifts-of-the-clans)).
 - Defacing someone's mark is a grave insult. Wearing a **false mark**, pretending to belong to another clan, is a deep taboo, and can be punished by death or exile.
 
 Alongside the mark, people wear their **clan-skin**, a strip of fur, feathers or hide from their clan-creature, so strangers can tell their clan at a glance ([Clan Guardians](@/spirits-of-the-world.md#clan-guardians)).
