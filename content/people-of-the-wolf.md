@@ -43,6 +43,10 @@ The spirit of every wolf that has ever run with the clan. It answers to the **Gr
 - **The Flintfangs:** a hot-tempered family, "wolves too quick to bite," with a long history of clashes with Boar. **Terek Flintfang** is young and has something to prove.
 - **The River-Den:** camps near the big river and handles trade with Seal and Raven. Their camp is where other clans most often meet the Wolf. **Hald**, the Pack-Leader, is River-Den.
 
+## Faces among the Wolf
+
+<span class="portrait"><img src="../portraits/hald.jpg" alt="Hald" width="140" loading="lazy"><span class="portrait-name">Hald</span></span> <span class="portrait"><img src="../portraits/ashen-bark.jpg" alt="Ashen-Bark" width="140" loading="lazy"><span class="portrait-name">Ashen-Bark</span></span> <span class="portrait"><img src="../portraits/anka-hushfern.jpg" alt="Anka Hushfern" width="140" loading="lazy"><span class="portrait-name">Anka Hushfern</span></span> <span class="portrait"><img src="../portraits/terek-flintfang.jpg" alt="Terek Flintfang" width="140" loading="lazy"><span class="portrait-name">Terek Flintfang</span></span> <span class="portrait"><img src="../portraits/hare-foot.jpg" alt="Hare-Foot" width="140" loading="lazy"><span class="portrait-name">Hare-Foot</span></span>
+
 ## What the Wolf say about others
 
 - **Reindeer and Owl:** friends. They respect the spirits and the seasons.

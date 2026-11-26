@@ -45,6 +45,10 @@ A huge grey seal whose spotted coat holds the patterns of the stars. It answers 
 
 The **Whale-Bone Village** on the Shattered Ice Sea is a Seal village. Its people swear oaths by the tides and believe lies cause storms.
 
+## Faces among the Seal
+
+<span class="portrait"><img src="../portraits/olla-foamtrail.jpg" alt="Olla Foamtrail" width="140" loading="lazy"><span class="portrait-name">Olla Foamtrail</span></span> <span class="portrait"><img src="../portraits/brenna-of-the-broken-harpoon.jpg" alt="Brenna of the Broken Harpoon" width="140" loading="lazy"><span class="portrait-name">Brenna of the Broken Harpoon</span></span> <span class="portrait"><img src="../portraits/hek-deepcaller.jpg" alt="Hek Deepcaller" width="140" loading="lazy"><span class="portrait-name">Hek Deepcaller</span></span> <span class="portrait"><img src="../portraits/taaruq.jpg" alt="Taaruq" width="140" loading="lazy"><span class="portrait-name">Taaruq</span></span>
+
 ## What the Seal say about others
 
 - **Raven:** trade partners and good gossip.

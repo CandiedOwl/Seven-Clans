@@ -43,6 +43,10 @@ The spirit of the lead doe who walked the first migration: a white doe whose ant
 - **The Frostveil Camp:** known for beautiful beadwork and cloaks. They are usually the first Reindeer that outsiders meet at the southern edges, and they handle trade and diplomacy.
 - **The Antlers-in-Mist Band:** a fast group that scouts ahead of the main herds. Their leader, **Risa Antlers-in-Mist**, is practical and wary of strange omens.
 
+## Faces among the Reindeer
+
+<span class="portrait"><img src="../portraits/galin-snowtrace.jpg" alt="Galin Snowtrace" width="140" loading="lazy"><span class="portrait-name">Galin Snowtrace</span></span> <span class="portrait"><img src="../portraits/risa-antlers-in-mist.jpg" alt="Risa Antlers-in-Mist" width="140" loading="lazy"><span class="portrait-name">Risa Antlers-in-Mist</span></span>
+
 ## What the Reindeer say about others
 
 - **Wolf, Owl and Seal:** they care about the big patterns: weather, spirits, migrations.

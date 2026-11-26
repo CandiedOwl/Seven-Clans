@@ -43,6 +43,10 @@ The spirit of every raven that ever stole a scrap or a secret. It answers to the
 - **The Bone-Tally Line:** scavengers and relic-traders who keep strings of bones as ledgers. **Jarn Bone-Tally** always has "just one more piece of information… for a price."
 - **The Creekperchers:** camp on stony riverbanks and run ferries and toll crossings. Nobody is ever quite sure their tolls are fair. **Wenna Creekpercher** runs their ferry on the big river.
 
+## Faces among the Raven
+
+<span class="portrait"><img src="../portraits/red-reed.jpg" alt="Red-Reed" width="140" loading="lazy"><span class="portrait-name">Red-Reed</span></span> <span class="portrait"><img src="../portraits/sari-riddlesong.jpg" alt="Sari Riddlesong" width="140" loading="lazy"><span class="portrait-name">Sari Riddlesong</span></span> <span class="portrait"><img src="../portraits/jarn-bone-tally.jpg" alt="Jarn Bone-Tally" width="140" loading="lazy"><span class="portrait-name">Jarn Bone-Tally</span></span> <span class="portrait"><img src="../portraits/wenna-creekpercher.jpg" alt="Wenna Creekpercher" width="140" loading="lazy"><span class="portrait-name">Wenna Creekpercher</span></span>
+
 ## What the Raven say about others
 
 - **Seal:** trade partners and fellow gossips.

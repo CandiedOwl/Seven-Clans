@@ -44,6 +44,10 @@ It watches through every owl and never closes its eyes. It answers to the **Ance
 
 **Half-Ear**, an old Owl ancestor-listener, lives by the Ancestors' Crossing in the marshes. He is deaf in one ear from too many spirit-whispers, and often talks with companions no one else can see.
 
+## Faces among the Owl
+
+<span class="portrait"><img src="../portraits/maeri-grey-feather.jpg" alt="Maeri Grey-Feather" width="140" loading="lazy"><span class="portrait-name">Maeri Grey-Feather</span></span> <span class="portrait"><img src="../portraits/tal-mothwing.jpg" alt="Tal Mothwing" width="140" loading="lazy"><span class="portrait-name">Tal Mothwing</span></span> <span class="portrait"><img src="../portraits/half-ear.jpg" alt="Half-Ear" width="140" loading="lazy"><span class="portrait-name">Half-Ear</span></span>
+
 ## What the Owl say about others
 
 - **Wolf and Raven:** good exchanges of lore and signs.

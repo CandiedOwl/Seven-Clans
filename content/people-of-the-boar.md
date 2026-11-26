@@ -45,6 +45,10 @@ A wild, burning spirit of every boar that ever charged without fear: a massive b
 
 **Iron-Singer Nara**, a rare smith-shaman who speaks to stone and metal, is Boar. She works the star-iron of the Ember-Heart Crater.
 
+## Faces among the Boar
+
+<span class="portrait"><img src="../portraits/kessa-spine-breaker.jpg" alt="Kessa Spine-Breaker" width="140" loading="lazy"><span class="portrait-name">Kessa Spine-Breaker</span></span> <span class="portrait"><img src="../portraits/uron-mudroot.jpg" alt="Uron Mudroot" width="140" loading="lazy"><span class="portrait-name">Uron Mudroot</span></span> <span class="portrait"><img src="../portraits/iron-singer-nara.jpg" alt="Iron-Singer Nara" width="140" loading="lazy"><span class="portrait-name">Iron-Singer Nara</span></span>
+
 ## What the Boar say about others
 
 - **Auroch:** brave, and good for a fight.

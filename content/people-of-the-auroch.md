@@ -43,6 +43,10 @@ A black bull taller than a man at the shoulder, with horns like the curve of the
 - **The Red-Mane Band:** a semi-independent war band known for red-dyed hair and braids. They border on reckless and often ride with Boar raiders. Their captain, **Mera Red-Mane**, is magnetic.
 - **The Grass-Whisper Hearth:** herders and quiet trackers who understand the plains. Less warlike, more spiritual. They are the first to notice when the herds behave strangely.
 
+## Faces among the Auroch
+
+<span class="portrait"><img src="../portraits/danek-stonehorn.jpg" alt="Danek Stonehorn" width="140" loading="lazy"><span class="portrait-name">Danek Stonehorn</span></span> <span class="portrait"><img src="../portraits/mera-red-mane.jpg" alt="Mera Red-Mane" width="140" loading="lazy"><span class="portrait-name">Mera Red-Mane</span></span>
+
 ## What the Auroch say about others
 
 - **Boar:** they love glory and a good fight, as we do.

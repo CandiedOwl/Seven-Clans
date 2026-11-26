@@ -50,6 +50,10 @@ FORBIDDEN = [
 MARKS_DIR = pathlib.Path("Assets") / "Clan Marks"
 IMAGE_EMBED = re.compile(r"!\[\[([^\]|]+\.svg)(?:\\?\|(\d+))?\]\]")
 
+# Portraits may only come from this vault folder (web-sized copies, never the GM originals).
+PORTRAITS_DIR = pathlib.Path("Assets") / "Player Portraits"
+PORTRAIT_EMBED = re.compile(r"!\[\[([^\]|]+\.jpg)(?:\\?\|(\d+))?\]\]")
+
 WIKILINK = re.compile(r"\[\[([^\]|#\\]+)(#[^\]|\\]+)?(?:\\?\|([^\]]+))?\]\]")
 
 
@@ -101,6 +105,23 @@ def convert_images(label, text, vault, images, problems):
     return IMAGE_EMBED.sub(repl, text)
 
 
+def convert_portraits(label, text, vault, portraits, problems):
+    def repl(m):
+        name, width = m.group(1).strip(), m.group(2)
+        src = vault / PORTRAITS_DIR / name
+        if not src.is_file():
+            problems.append(f"{label}: portrait not found in {PORTRAITS_DIR}: {name}")
+            return m.group(0)
+        check_spoilers(f"{label} (portrait name)", name, problems)
+        out = slug(name[:-4]) + ".jpg"
+        portraits[out] = src
+        who = name[:-4]
+        size = f' width="{width}"' if width else ""
+        return (f'<span class="portrait"><img src="../portraits/{out}" alt="{who}"{size} loading="lazy">'
+                f'<span class="portrait-name">{who}</span></span>')
+    return PORTRAIT_EMBED.sub(repl, text)
+
+
 def main():
     vault = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_VAULT
     guide = vault / "Player Guide"
@@ -114,12 +135,13 @@ def main():
     if missing:
         sys.exit("These notes are listed in ORDER but missing from the vault: " + ", ".join(missing))
 
-    problems, pages, images = [], {}, {}
+    problems, pages, images, portraits = [], {}, {}, {}
     for weight, name in enumerate(ORDER):
         raw = (guide / f"{name}.md").read_text(encoding="utf-8")
         body = strip_frontmatter(raw).strip() + "\n"
         check_spoilers(f"{name}.md", body, problems)
         body = convert_images(f"{name}.md", body, vault, images, problems)
+        body = convert_portraits(f"{name}.md", body, vault, portraits, problems)
         body = convert_links(f"{name}.md", body, problems)
         if weight == 0:
             front = f'+++\ntitle = "{config_title()}"\nsort_by = "weight"\n+++\n\n'
@@ -156,6 +178,13 @@ def main():
     for out_name, src in images.items():
         shutil.copyfile(src, marks / out_name)
 
+    portrait_dir = ROOT / "static" / "portraits"
+    if portrait_dir.exists():
+        shutil.rmtree(portrait_dir)
+    portrait_dir.mkdir(parents=True)
+    for out_name, src in portraits.items():
+        shutil.copyfile(src, portrait_dir / out_name)
+
     back = '<p class="lede"><a href="./">Back to the player\'s guide</a></p>'
     map_html = map_html.replace("</header>", f"  {back}\n  </header>", 1)
     (ROOT / "static" / "map.html").write_text(
@@ -166,7 +195,7 @@ def main():
         encoding="utf-8",
     )
 
-    print(f"Synced {len(pages)} pages, {len(images)} clan marks and the map from {guide}")
+    print(f"Synced {len(pages)} pages, {len(images)} clan marks, {len(portraits)} portraits and the map from {guide}")
     if extra:
         print("Not published (add them to ORDER in scripts/sync.py to include): " + ", ".join(extra))
 
